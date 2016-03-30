@@ -1,4 +1,4 @@
-# diggit - experiments
+# diggit - experiments ![Build Status](https://circleci.com/gh/lawrencejones/diggit-experiments.png)
 
 An electron app that provides a framework for diggit related prototyping,
 visualisations and experiements. Main repo is located at

@@ -13,4 +13,4 @@ fi
 
 cd $DIGGIT_PATH && \
   git fetch origin && \
-  git checkout $SHA_REF
+  git reset --hard $SHA_REF
