@@ -11,7 +11,7 @@ chai.use(require('sinon-chai'));
 
 const temporaryRepos = [];
 const makeTemporaryRepo = () => {
-  let stdout = execSync(path.join(__dirname, '..', 'bin', 'mktmprepo'));
+  let stdout = execSync(path.join(process.env.DIGGIT_PATH, 'bin', 'mktmprepo'));
   let repoPath = stdout.toString().replace(/\s*$/, '');
 
   temporaryRepos.push(repoPath);
