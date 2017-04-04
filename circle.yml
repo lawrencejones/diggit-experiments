@@ -1,14 +1,10 @@
 dependencies:
-  cache_directories:
-    - 'diggit'
   pre:
     - sudo apt-get update && sudo apt-get install jq
   override:
     - git config --global user.email "bot@circle.ci"
     - git config --global user.name "Circle"
-    - ./checkout-diggit.sh
-    - bundle install:
-        pwd: diggit
+    - bundle install
     - npm install -g jshint
     - npm install
 
@@ -17,12 +13,11 @@ machine:
     version: '2.2.3'
   node:
     version: '5.1.1'
-  environment:
-    DIGGIT_PATH: './diggit'
 
 test:
   pre:
     - npm run lint
+    - bundle exec rspec
     - npm test:
         environment:
           INTEG: true
